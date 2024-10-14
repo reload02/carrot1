@@ -1,0 +1,10 @@
+.App{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border: 1px solid black;
+  height: 900px;
+  justify-content: space-between;
+  border-radius: 15px;
+}

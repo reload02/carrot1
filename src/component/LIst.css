@@ -1,0 +1,59 @@
+.List{
+    display: flex;
+    margin: 10px;
+    border-bottom: 1px solid rgb(226, 226, 226);
+    padding-bottom: 20px; 
+   
+}
+
+.textbox{
+    flex : 1;
+    justify-content: space-between;
+
+    display: flex;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    flex :1 ;
+    
+}
+
+
+
+.img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.titleCont{
+    font-size: 25px;
+}
+
+.infoCont{
+    font-size: 15px;
+    color: gray;
+}
+
+.priceCont{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.moreCont{
+    justify-self: end;
+    height: 10px;
+    background-color: white;
+    border: none;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.responeCont{
+    margin-top:auto ;
+    margin-left: auto;
+}

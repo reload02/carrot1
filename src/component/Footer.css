@@ -1,0 +1,15 @@
+.Footer{
+    border-top: 1px solid rgb(226, 226, 226);
+    display: flex;
+    justify-content: space-between;
+}
+
+.Footer >button{
+    background-color: white;
+    border: NONE;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    font-size: 30px;
+}

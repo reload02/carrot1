@@ -1,38 +1,17 @@
 import './Home.css'
 import List from "../component/List"
+import { useContext } from 'react'
+import { itemDatasContext } from '../App'
 
 const Home = ()=>{
+    const itemDatas = useContext(itemDatasContext);
     return (
     <div className="Home">
         <button className='plusButton'>+</button>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
-        <List/>
+        {itemDatas.map((items)=>(
+            <List items = {items} key={items.itemId}/>))}
+        
+        
        
     </div>
     )

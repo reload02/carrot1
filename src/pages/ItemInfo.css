@@ -1,0 +1,24 @@
+.ItemInfo{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.picture{
+    display: flex;
+    flex: 1;
+    height: 400px;
+}
+
+.userInfo{
+    width: 500px;
+    height: 80px;
+    padding: 0px;
+    border: 1px solid black;
+}
+
+.ItemInfo{
+    width: auto;
+    height: auto;
+
+}

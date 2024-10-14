@@ -6,6 +6,7 @@ import CityMap from './pages/CityMap'
 import EditContent from './pages/EditContent'
 import MyInfo from './pages/MyInfo'
 import NewContent from './pages/NewContent'
+import ItemInfo from './pages/itemInfo'
 import { Route, Routes } from 'react-router-dom'
 import Header from './component/Header'
 import Footer from './component/Footer'
@@ -16,7 +17,7 @@ let itemDatas = [
     "itemId": 1,
     "img": [],
     "title": "1번물건 테스트",
-    "explain": "설명 없음",
+    "explain": "설명 \n\n\n\n\n\nㅁㄴㅇㅁㄴㅇ\n\n\nㅁㄴㅇ\n\n없음",
     "lenth": "100m",
     "locationq": "행운동",
     "uploadTime": "10분전",
@@ -271,6 +272,7 @@ function App() {
           <Route path = "/editcontent" element={<EditContent/>}/>
           <Route path = "/myinfo" element={<MyInfo/>}/>
           <Route path = "/newcontent" element={<NewContent/>}/>
+          <Route path = "/iteminfo/:id" element={<ItemInfo/>}/>
         </Routes>
     </itemDatasContext.Provider>
     <Footer className="Footer"/>

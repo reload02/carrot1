@@ -10,7 +10,7 @@ import ItemInfo from './pages/itemInfo'
 import { Route, Routes } from 'react-router-dom'
 import Header from './component/Header'
 import Footer from './component/Footer'
-import { createContext } from 'react'
+import { createContext,useRef, useState } from 'react'
 
 let itemDatas = [
   {
@@ -253,17 +253,47 @@ let itemDatas = [
   },
 ];
 
+export const addItemContext = createContext();
 
 export const itemDatasContext = createContext();
 
 
+
 function App() {
+  
+  const [itemdatas , setitemdatas] = useState(itemDatas);
+ const itemId = useRef(15)
+
+ const newItem  = (item)=>{ 
+  console.log(itemDatas)
+  setitemdatas([...itemdatas,
+    {
+    "itemId": itemId.current++,
+    "img": [],
+    "title": item.title,
+    "explain": item.explain,
+    "lenth": "100m",
+    "locationq": "행운동",
+    "uploadTime": "10분전",
+    "price": item.price,
+    "chatTime": 6,
+    "heart": 10,
+    "seeTime": 0,
+    "userID": 1,
+    "category": "전자제품",
+    "hopeTradePlace": "행운동 공원",
+    "canEnul": item.enull
+  },]
+  )
+  console.log(itemdatas)
+}
 
 
   return (
    <div className='App'>
       <Header/>
-      <itemDatasContext.Provider value={itemDatas}>
+      <itemDatasContext.Provider value={itemdatas} >
+       <addItemContext.Provider value={newItem}>
         <Routes>
           <Route path = "/" element={<Home />}/>
           <Route path = "/chatting" element={<Chatting/>}/>
@@ -274,6 +304,7 @@ function App() {
           <Route path = "/newcontent" element={<NewContent/>}/>
           <Route path = "/iteminfo/:id" element={<ItemInfo/>}/>
         </Routes>
+        </addItemContext.Provider>
     </itemDatasContext.Provider>
     <Footer className="Footer"/>
     </div>

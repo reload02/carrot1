@@ -5,17 +5,16 @@ import './ItemInfo.css'
 
 const ItemInfo = ()=>{
     const { id } = useParams();
-    const itemDatas = useContext(itemDatasContext);
+    const {items} = useContext(itemDatasContext);
 
 return(<div className='ItemInfo'>
     <button className='picture'>사진입니다</button>
     <div className='userInfo'>유저정보</div>
     <div className='itemInfo'>
         <div className='title'>
-            {console.log(itemDatas)}
-            {itemDatas[id-1].title}
+            {(items.filter((i)=>i.itemId==id))[0].title}
         </div>
-        {itemDatas[id-1].explain}
+        {(items.filter((i)=>i.itemId==id))[0].explain}
     </div>
 </div>)
 }

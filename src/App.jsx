@@ -253,20 +253,20 @@ let itemDatas = [
   },
 ];
 
-export const addItemContext = createContext();
-
 export const itemDatasContext = createContext();
 
 
 
 function App() {
   
-  const [itemdatas , setitemdatas] = useState(itemDatas);
+ const [items , setItems] = useState(itemDatas);
  const itemId = useRef(15)
 
  const newItem  = (item)=>{ 
-  console.log(itemDatas)
-  setitemdatas([...itemdatas,
+  if(typeof item =='number'){
+    console.log(1)
+  }else{
+  setItems([...items,
     {
     "itemId": itemId.current++,
     "img": [],
@@ -285,26 +285,33 @@ function App() {
     "canEnul": item.enull
   },]
   )
-  console.log(itemdatas)
-}
+  }}
+
+ const delItem = (itemId)=>{
+    itemDatas.map((item)=>{
+      if(item.itemId === itemId){
+        item.title='삭제'
+        setItems(itemDatas)
+      }
+      }  )
+    
+ }
 
 
   return (
    <div className='App'>
       <Header/>
-      <itemDatasContext.Provider value={itemdatas} >
-       <addItemContext.Provider value={newItem}>
+      <itemDatasContext.Provider value={{items, setItems,itemId}} >
         <Routes>
           <Route path = "/" element={<Home />}/>
           <Route path = "/chatting" element={<Chatting/>}/>
           <Route path = "/citylife" element={<CityLife/>}/>
           <Route path = "/citymap" element={<CityMap/>}/>
-          <Route path = "/editcontent" element={<EditContent/>}/>
+          <Route path = "/editcontent/:id" element={<EditContent/>}/>
           <Route path = "/myinfo" element={<MyInfo/>}/>
           <Route path = "/newcontent" element={<NewContent/>}/>
           <Route path = "/iteminfo/:id" element={<ItemInfo/>}/>
-        </Routes>
-        </addItemContext.Provider>
+        </Routes> 
     </itemDatasContext.Provider>
     <Footer className="Footer"/>
     </div>

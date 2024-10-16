@@ -1,17 +1,41 @@
 import './NewContent.css'
 import { useState, useContext } from 'react'
-import { addItemContext } from '../App'
 import { useNavigate } from 'react-router-dom'
+import { itemDatasContext } from '../App'
 
 const NewContent = ()=>{
 
-    const newitem = useContext(addItemContext)
+    const {items,setItems,itemId} = useContext(itemDatasContext);
     const navigate = useNavigate();
 
     const MovePage = () =>{
         navigate('/')
     }
    
+    const newItem  = (item)=>{ 
+        if(typeof item =='number'){
+          console.log(1)
+        }else{
+        setItems([...items,
+          {
+          "itemId": itemId.current++,
+          "img": [],
+          "title": item.title,
+          "explain": item.explain,
+          "lenth": "100m",
+          "locationq": "행운동",
+          "uploadTime": "10분전",
+          "price": item.price,
+          "chatTime": 6,
+          "heart": 10,
+          "seeTime": 0,
+          "userID": 1,
+          "category": "전자제품",
+          "hopeTradePlace": "행운동 공원",
+          "canEnul": item.enull
+        },]
+        )
+        }}
     
 
     const [title , setTitle] = useState("");
@@ -63,7 +87,7 @@ const NewContent = ()=>{
             item.enull = enull
             item.explain = explain
             item.price = price
-           newitem(item)
+           newItem(item)
             MovePage()
         }}>작성완료</button>
         </div>)

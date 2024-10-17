@@ -1,0 +1,47 @@
+.imgbox{
+    position: relative;
+    width: 500px;
+}
+
+.imgbox >img{
+    width: 450px;
+    height: auto;
+}
+
+.imgbox .imgtext{
+    position: absolute;
+    top: 35%;
+    left: 70%;
+    color: white;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.listWrapper{
+    width: 250px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.date{
+    text-align: center;
+    width: 100px;
+}
+
+.searchbar{
+
+}
+
+.lll{
+    display: flex;
+}
+
+.lll >Button{
+    font-size: 15px;
+    background-color: gray;
+}
+

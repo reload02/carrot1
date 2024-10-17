@@ -1,0 +1,16 @@
+.arealist{
+    margin-bottom: 5px;
+    border-bottom: 1px solid gray;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.arealist_selected{
+    margin-bottom: 5px;
+    border-bottom: 1px solid gray;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: cyan;
+}

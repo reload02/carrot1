@@ -2,7 +2,8 @@ import './NewContent.css'
 import { useState, useContext } from 'react'
 import { useNavigate,useParams } from 'react-router-dom'
 import { itemDatasContext } from '../App'
-
+import Header from '../component/Header'
+import Button from '../component/Button'
 const EditContent = ()=>{
 
     const { id } = useParams();
@@ -47,7 +48,11 @@ const EditContent = ()=>{
     }
 
     return (<div className='NewContent'>
-        <div>상단부</div>
+        <Header 
+        leftChild={<Button text={"<"}/>}
+        middleChild={<Button text={"수정"}/>}
+        rightChild={<Button text={"임시저장"}/>}
+        />
         <div className='pictures'>
             <button>사진추가</button>
             <div>사진슬라이드</div>

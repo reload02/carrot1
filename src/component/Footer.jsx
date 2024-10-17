@@ -1,3 +1,4 @@
+import Button from './Button';
 import './Footer.css'
 import { useNavigate } from 'react-router-dom'
 
@@ -12,11 +13,16 @@ const Footer = ()=>{
     }
 
     return (<div className='Footer'>
-        <button onClick={()=>{MovePage("")}}>🛖</button>
-        <button onClick={()=>{MovePage("citylife")}}>🎶</button>
-        <button onClick={()=>{MovePage("citymap")}}>🗺️</button>
-        <button onClick={()=>{MovePage("chatting")}}>🗣️</button>
-        <button onClick={()=>{MovePage("myinfo")}}>😊</button>
+        <Button text={"🛖"} type={"footer"} onClick={
+            ()=>MovePage("")}/>
+        <Button text={"🎶"} type={"footer"} onClick={
+            ()=>MovePage("citylife")}/>
+        <Button text={"🗺️"} type={"footer"} onClick={
+            ()=>MovePage("citymap")}/>
+        <Button text={"🗣️"} type={"footer"} onClick={
+            ()=>MovePage("chatting")}/>
+        <Button text={"😊"} type={"footer"} onClick={
+            ()=>MovePage("myinfo")}/> 
     </div>)
 }
 

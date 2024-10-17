@@ -4,12 +4,3 @@
     justify-content: space-between;
 }
 
-.Footer >button{
-    background-color: white;
-    border: NONE;
-    border-radius: 5px;
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    font-size: 30px;
-}

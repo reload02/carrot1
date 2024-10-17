@@ -300,7 +300,7 @@ function App() {
 
   return (
    <div className='App'>
-      <Header/>
+      
       <itemDatasContext.Provider value={{items, setItems,itemId}} >
         <Routes>
           <Route path = "/" element={<Home />}/>
@@ -313,7 +313,7 @@ function App() {
           <Route path = "/iteminfo/:id" element={<ItemInfo/>}/>
         </Routes> 
     </itemDatasContext.Provider>
-    <Footer className="Footer"/>
+    
     </div>
     
   )

@@ -55,7 +55,7 @@ const NewContent = ()=>{
     return (<div className='NewContent'>
         <Header 
         leftChild={<Button text={"<"}/>}
-        middleChild={<Button text={"작성"}/>}
+        middleChild={"작성"}
         rightChild={<Button text={"임시저장"}/>}
         />
         <div className='pictures'>

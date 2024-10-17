@@ -50,7 +50,7 @@ const EditContent = ()=>{
     return (<div className='NewContent'>
         <Header 
         leftChild={<Button text={"<"}/>}
-        middleChild={<Button text={"수정"}/>}
+        middleChild={"수정"}
         rightChild={<Button text={"임시저장"}/>}
         />
         <div className='pictures'>

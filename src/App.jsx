@@ -8,9 +8,8 @@ import MyInfo from './pages/MyInfo'
 import NewContent from './pages/NewContent'
 import ItemInfo from './pages/itemInfo'
 import { Route, Routes } from 'react-router-dom'
-import Header from './component/Header'
-import Footer from './component/Footer'
 import { createContext,useRef, useState } from 'react'
+import Loader from './component/Loader'
 
 let itemDatas = [
   {
@@ -311,6 +310,7 @@ function App() {
           <Route path = "/myinfo" element={<MyInfo/>}/>
           <Route path = "/newcontent" element={<NewContent/>}/>
           <Route path = "/iteminfo/:id" element={<ItemInfo/>}/>
+          <Route path = "loader" element={<Loader/>}/>
         </Routes> 
     </itemDatasContext.Provider>
     
